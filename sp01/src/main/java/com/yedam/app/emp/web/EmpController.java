@@ -1,12 +1,15 @@
 package com.yedam.app.emp.web;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yedam.app.emp.service.EmpService;
 import com.yedam.app.emp.service.EmpVO;
@@ -62,7 +65,21 @@ public class EmpController {
 		return path;
 	}
 	
-	// 사원수정 - PROCESS
+	// 사원수정 - PROCESS : Ajax => @ResponseBody
+	// 1) QueryString => 커맨드 객체
+	@PostMapping("empUpdate")
+	@ResponseBody
+	public Map<String, Object> empUpdateProcess(EmpVO empVO){
+		return empService.updateEmpInfo(empVO);
+	}
+	
+	// 2) JSON => @RequestBody
+	@PostMapping("empUpdateAjax")
+	@ResponseBody
+	public Map<String, Object> empUpdateAjaxProcess(
+			@RequestBody EmpVO empVO){
+		return empService.updateEmpInfo(empVO);
+	}
 	
 	// 사원삭제 - PROCESS
 }
