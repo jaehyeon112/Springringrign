@@ -1,0 +1,4 @@
+dbClass=oracle.jdbc.driver.OracleDriver
+dbUrl=jdbc:oracle:thin:@127.0.0.1:1521:xe
+dbId=hr
+dbPass=1234

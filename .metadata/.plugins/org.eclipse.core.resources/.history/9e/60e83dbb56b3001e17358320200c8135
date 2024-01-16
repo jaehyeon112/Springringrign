@@ -1,0 +1,15 @@
+package com.yedam.app.emp.mapper;
+
+public interface EmpMapper {
+	//전체조회
+	public List<EmpVO> selectEmpList();
+	
+	//단건조회
+	
+	//등록
+	
+	//수정
+	
+	//삭제
+	
+}

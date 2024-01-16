@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<thead>
+			<tr>
+				<th>No.</th>
+				<th>employee_id</th>
+				<th>last_name</th>
+				<th>email</th>
+				<th>hire_date</th>
+				<th>job_id</th>
+				<th>salary</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${empList}" var="emp" varStatus="idx">
+				<tr>
+					<td>${idx.count}</td>
+					<td>${emp.employeeId}</td>
+					<td>${emp.lastName}</td>
+					<td>${emp.email}</td>
+					<td><fmt:formatDate value="${emp.hireDate}"
+							pattern="yyyy년 MM월 dd일" /></td>
+					<td>${emp.jobId}</td>
+					<td>${emp.salary}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+</body>
+</html>

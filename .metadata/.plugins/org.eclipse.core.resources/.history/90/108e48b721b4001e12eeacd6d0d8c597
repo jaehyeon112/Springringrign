@@ -1,0 +1,8 @@
+package com.yedam.app.service.impl;
+
+import com.yedam.app.emp.service.EmpService;
+
+@Service
+public class EmpServiceImpl implements EmpService{
+
+}
